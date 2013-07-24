@@ -1,0 +1,266 @@
+/*
+ * LIGHTSTREAMER - www.lightstreamer.com
+ * Monitor Console Demo
+ *
+ *  Copyright 2013 Weswit Srl
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+table { 
+	table-layout: fixed;
+}
+#wrap {
+  width: 782px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 20px;
+  padding-bottom: 15px;
+  margin-top: 0px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #D9DADB;
+  box-shadow: -8px 0px 5px -5px #94A5AA, 8px 0px 5px -5px #94A5AA
+}
+.pagetitle { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 15pt;
+	color: #ffffff;
+	background-color: #396985;
+	font-weight: bold;
+	text-align: left
+}
+.scrollBodyAct { 
+	width: 798px;
+	height: 200px; 
+	overflow: scroll; 
+	scrollbar-3dlight-color: #00CC00; 
+	scrollbar-arrow-color: #009933; 
+	scrollbar-base-color: #99ff66; 
+	scrollbar-darkshadow-color: #009933; 
+	scrollbar-face-color: #99ff66; 
+	scrollbar-highlight-color: #00CC00; 
+	scrollbar-shadow-color: #00CC00; 
+}
+.scrollBodyWar { 
+	width: 798px; 
+	height: 200px; 
+	overflow: scroll; 
+	scrollbar-3dlight-color: #D2C517; 
+	scrollbar-arrow-color: #746814; 
+	scrollbar-base-color: #FFFF99; 
+	scrollbar-darkshadow-color: #746814; 
+	scrollbar-face-color: #FFFF99; 
+	scrollbar-highlight-color: #D2C517; 
+	scrollbar-shadow-color: #D2C517; 
+}
+.scrollBodyErr { 
+	width: 798px; 
+	height: 200px; 
+	overflow: scroll; 
+	scrollbar-3dlight-color: #DF1313; 
+	scrollbar-arrow-color: #D12C04; 
+	scrollbar-base-color: #FBDAB5; 
+	scrollbar-darkshadow-color: #D12C04; 
+	scrollbar-face-color: #FBDAB5; 
+	scrollbar-highlight-color: #DF1313; 
+	scrollbar-shadow-color: #DF1313; 
+}
+.smalltitles { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 7pt; 
+	color: #ffffff; 
+	background-color: #5f99bb; 
+	font-weight: bold; 
+	text-align: center 
+}
+.smalltitlesleft { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 7pt; 
+	color: #5f99bb; 
+	background-color: #ffffff; 
+	font-weight: bold; 
+	text-align: right 
+}
+.midtitles { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: #000080; 
+	background: #EEEEEE; 
+	font-weight: normal; 
+	text-align: left 
+}
+.largetitles { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9pt; 
+	color: #ffffff; 
+	background-color: #5f99bb; font-weight: bold; 
+	text-align: left 
+}
+.largetitlescontrols { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9pt; 
+	color: #ffffff; 
+	background-color: #396985; 
+	font-weight: bold; 
+	text-align: left 
+}
+.infocontrols { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7pt;
+	color: #396985;
+	background: #ffffff;
+	text-align: left;
+	font-weight: normal 
+}
+.lscold { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: #000000; 
+	background: #eeeeee; 
+	overflow: hidden; 
+	font-weight: normal; 
+	text-align: center 
+}
+.lshot { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: #000000; 
+	background: #eeeeee; 
+	overflow: hidden; 
+	font-weight: bold; 
+	text-align: center   
+}
+.lscoldact { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	overflow: hidden; 
+	font-weight: normal; 
+	font-size: 8pt; 
+	color: #000000; 
+	background: #99ff66; 
+	text-align: left 
+}
+.lscoldwar { 
+	overflow: hidden; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: #000000; 
+	background: #ffff99; 
+	font-weight: normal; 
+	text-align: left 
+}
+.lscolderr { 
+	overflow: hidden; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: #000000; 
+	background: #fbdab5; 
+	font-weight: normal; 
+	text-align: left 
+}
+.smalltitlesact { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 7pt; 
+	color: #ffffff; 
+	background-color: #00cc00; 
+	font-weight: bold; 
+	text-align: left 
+}
+.largetitlesact { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9pt; 
+	color: #ffffff; 
+	background-color: #009933; 
+	font-weight: bold; 
+	text-align: left 
+}
+.smalltitleswar {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 7pt; 
+	color: #ffffff; 
+	background-color: #d2c517; 
+	font-weight: bold; 
+	text-align: left 
+}
+.largetitleswar { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9pt; 
+	color: #ffffff; 
+	background-color: #746814; 
+	font-weight: bold; 
+	text-align: left 
+}
+.smalltitleserr { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 7pt; 
+	color: #ffffff; 
+	background-color: #df1313; 
+	font-weight: bold; 
+	text-align: left 
+}
+.largetitleserr { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9pt; 
+	color: #ffffff; 
+	background-color: #b12c04; 
+	font-weight: bold;
+	text-align: left 
+}
+.note {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  color: #006600;
+  font-weight: normal;
+  text-align: left;
+}
+.infoName { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #396985;
+	background: #ffffff;
+	text-align: left;
+	font-weight: normal 
+} 
+.infoValue { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #396985;
+	background: #ffffff;
+	text-align: left;
+	font-weight: bold
+}
+.slideLine {
+	width: 300px;
+	background-color: #dddddd;
+	height: 10px;
+	position: relative;
+}
+.cursor {
+	position: absolute;
+	top: -5px;
+	left: 0px;
+	width: 11px;
+	height: 21px;
+	background: transparent url(../images/handle.png);
+	overflow: visible;
+}
+
+/** Google Chrome hacks (for a bug on visibility:hidden) */
+body:nth-of-type(1) .lscoldact {
+   overflow: visible;
+}
+body:nth-of-type(1) .lscoldwar {
+   overflow: visible;
+}
+body:nth-of-type(1) .lscolderr {
+   overflow: visible;
+}

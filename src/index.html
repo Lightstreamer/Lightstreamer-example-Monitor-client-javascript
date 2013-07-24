@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<!--
+LIGHTSTREAMER - www.lightstreamer.com
+Monitor Console
+Copyright (c) 2004-2013 Weswit Srl. All rights reserved.
+  
+  Copyright 2013 Weswit s.r.l.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Lightstreamer :: Monitor Console Demo</title>
+  <link rel="stylesheet" type="text/css" href="css/monitor.css" />
+
+  <!-- load script.aculo.us libraries (used for the slider visual controls) -->
+  <script src="scriptaculous/prototype.js" type="text/javascript"></script>
+  <script src="scriptaculous/scriptaculous.js?load=slider" type="text/javascript"></script>
+</head>
+
+<body vlink="#6c21b1" link="#0000ee" bgcolor="#ffffff" bottommargin="0" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<a href="https://github.com/Weswit/Lightstreamer-example-Monitor-client-javascript"><img style="position: absolute; top: 0; right: 0; border: 0; z-index:1" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+<div id="wrap">
+  <!-- server address section; see details.js -->
+  <table cellspacing="0" cellpadding="0" width="782" border="0">
+    <tr>
+      <td><a href="http://www.lightstreamer.com"><img src="images/headerls.jpg" border="0" /></a></td>
+    </tr>
+    <tr>
+      <td class="note">
+      <b>NOTE: </b>This is just a demo application. The 
+    actual <b>Monitor Console</b>, which is intended for use by Lightstreamer Server's administrators, is
+    available from a different URL and with the proper credentials, as 
+    configured in lightstreamer_conf.xml. In production deployments, all the
+    demo applications should be removed from the &quot;pages&quot; folder, including 
+    this instance of the Monitor Console Demo, as well as the "Demo" folder within "Adapters".</td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+      <td class="infoName">Server Instance Address:
+        <span data-source="lightstreamer" data-grid="license" data-item="monitor_identification" data-field="SERVER_ADDRESS" data-fieldtype="extra">-</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="infoName">Startup Time:
+      <span data-source="lightstreamer" data-grid="license" data-item="monitor_identification" data-field="STARTUP_TIME">-</span>
+      </td>
+    </tr>    
+  </table>
+  <br />
+
+  <!-- server statistics section; see statistics.js -->
+  <table cellspacing="1" cellpadding="2" width="782" border="0">
+    <tr class="smalltitles">
+      <td width="100" bgcolor="#FFFFFF"></td>
+      <td width="333">Total Heap</td>
+      <td width="333">Free Heap</td>
+    </tr>
+    <tr>
+      <td nowrap class="smalltitlesleft" height="18">Memory (Bytes)</td>
+      <td class="lscold" height="18">
+        <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="MEMORY.TOTAL">
+          -</div>
+      </td>
+      <td class="lscold" height="18">
+        <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="MEMORY.FREE">
+          -</div>
+      </td>
+    </tr>
+  </table>
+  <br />
+  <table cellspacing="1" cellpadding="2" width="782" border="0">
+    <tr class="smalltitles">
+      <td width="100" bgcolor="#FFFFFF"></td>
+      <td width="164">Total</td>
+      <td width="164">Streaming Mode</td>
+      <td width="164">Smart-Polling Mode</td>
+      <td width="164">Max</td>
+    </tr>
+    <tr>
+      <td nowrap class="smalltitlesleft">
+      <div align="right">
+        Sessions</div>
+      </td>
+      <td class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="CLIENTS.SESSIONS">
+        -</div>
+      </td>
+      <td class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="CLIENTS.STREAMING_SESSIONS">
+        -</div>
+      </td>
+      <td class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="CLIENTS.POLLING_SESSIONS">
+        -</div>
+      </td>
+      <td class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="CLIENTS.MAX_SESSIONS">
+        -</div>
+      </td>
+    </tr>
+  </table>
+  <br />
+  <table cellspacing="1" cellpadding="2" width="782" border="0">
+    <tr class="smalltitles">
+      <td width="100" bgcolor="#FFFFFF"></td>
+      <td width="333">Total</td>
+      <td width="333">Max</td>
+    </tr>
+    <tr>
+      <td nowrap class="smalltitlesleft">
+      <div align="right">
+        Connections</div>
+      </td>
+      <td class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="CLIENTS.CONNECTIONS">
+        -</div>
+      </td>
+      <td class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="CLIENTS.MAX_CONNECTIONS">
+        -</div>
+      </td>
+    </tr>
+  </table>
+  <br />
+  <table cellspacing="1" cellpadding="2" width="782" border="0">
+    <tr class="smalltitles">
+      <td width="100" bgcolor="#FFFFFF"></td>
+      <td width="221">Subscribed Items</td>
+      <td width="220">Throughput (updates/s)</td>
+      <td width="220">Total Received Updates</td>
+    </tr>
+    <tr>
+      <td nowrap class="smalltitlesleft">Inbound</td>
+      <td class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="ITEMS.TOTAL">
+        -</div>
+      </td>
+      <td class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="ITEMS.EVENTS_SEC">
+        -</div>
+      </td>
+      <td class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="UPDATES.TOTAL_IN">
+        -</div>
+      </td>
+    </tr>
+  </table>
+  <br />
+  <table cellspacing="1" cellpadding="2" width="782" border="0">
+    <tr class="smalltitles">
+      <td width="100" bgcolor="#FFFFFF"></td>
+      <td width="131">Throughput (updates/s)</td>
+      <td width="130">Throughput (kbit/s)</td>
+      <td width="130">Total Sent Bytes</td>
+      <td width="130">Total Sent Updates</td>
+      <td width="130">Total Lost Updates</td>
+    </tr>
+    <tr>
+      <td nowrap class="smalltitlesleft">Outbound</td>
+      <td class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="UPDATES.EVENTS_SEC">
+        -</div>
+      </td>
+      <td class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="BANDWIDTH.CURRENT">
+        -</div>
+      </td>
+      <td class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="BANDWIDTH.TOTAL_BYTES">
+        -</div>
+      </td>
+      <td class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="UPDATES.TOTAL_OUT">
+        -</div>
+      </td>
+      <td class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="UPDATES.TOTAL_LOST">
+        -</div>
+      </td>
+    </tr>
+  </table>
+  <br />
+  <table cellspacing="1" cellpadding="2" width="782" border="0">
+    <tr class="smalltitles">
+      <td width="100" bgcolor="#FFFFFF"></td>
+      <td width="164">Throughput (messages/s)</td>
+      <td width="164">Throughput (kbit/s)</td>
+      <td width="164">Total Processed Bytes</td>
+      <td width="164">Total Handled Messages</td>
+    </tr>
+    <tr>
+      <td nowrap class="smalltitlesleft">Client Messages</td>
+      <td class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="MESSAGES.EVENTS_SEC">
+        -</div>
+      </td>
+      <td class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="MESSAGES.CURRENT_THROUGHPUT">
+        -</div>
+      </td>
+      <td class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="MESSAGES.TOTAL_BYTES">
+        -</div>
+      </td>
+      <td class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="MESSAGES.TOTAL_HANDLED">
+        -</div>
+      </td>
+    </tr>
+  </table>
+  <br />
+  <table cellspacing="1" cellpadding="2" width="782" border="0">
+    <tr class="smalltitles">
+      <td width="100" bgcolor="#FFFFFF"></td>
+      <td width="164">Size</td>
+      <td width="164">Active</td>
+      <td width="164">Available</td>
+      <td width="164">Queued Tasks</td>
+    </tr>
+    <tr>
+      <td nowrap class="smalltitlesleft">Thread Pool</td>
+      <td class="lscold">
+        <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="POOL.SIZE">
+          -</div>
+      </td>
+      <td class="lscold">
+        <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="POOL.ACTIVE">
+          -</div>
+      </td>
+      <td class="lscold">
+        <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="POOL.WAITING">
+          -</div>
+      </td>
+      <td class="lscold">
+        <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="POOL.QUEUE">
+          -</div>
+      </td>
+    </tr>
+    <tr>
+      <td nowrap class="smalltitlesleft">Total JVM Threads</td>
+      <td colspan="4" class="lscold">
+      <div data-source="lightstreamer" data-grid="stats" data-item="monitor_statistics" data-field="THREADS">
+        -</div>
+      </td>
+    </tr>
+  </table>
+  <br />
+
+  <!-- server logging section; see logging.js -->
+  <table cellspacing="1" cellpadding="2" width="782" border="0">
+    <tr class="largetitlescontrols">
+      <td>Scroll Controls</td>
+    </tr>
+    <tr>
+      <td>
+      <table cellpadding="0" cellspacing="2">
+        <tr>
+          <td width="55%" class="infocontrols"><b>Log Message Filtering Status</b></td>
+          <td width="39%" class="infocontrols"><b>History Limit for the Log Message Panels</b></td>
+          <td width="6%">&nbsp;</td>
+        </tr>
+        <tr>
+          <td valign="bottom"><div><img id="luSignal" src="images/led_off.gif" alt="Lost updates signal" align="absbottom" /></td>
+          <td>
+            <div class="slideLine" id="selectLimit">
+              <div class="cursor" id="handleSelectLimit"></div>
+            </div>
+          </td>
+          <td>
+            <div class="infocontrols" style="font-weight:bold;">
+              <span id="nowLimit">50</span>
+              rows</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="infocontrols" valign="top">A red light notifies that some messages in the panels below are being dropped.</td>
+          <td class="infocontrols" valign="top">Use the slider to set the depth of the tables below.</td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+      </td>
+    </tr>
+  </table>
+  <br />
+  <table cellspacing="1" cellpadding="2" width="782" border="0">
+    <tr class="largetitlesact">
+      <td>Activities</td>
+    </tr>
+  </table>
+  <table cellspacing="1" cellpadding="2" width="782" border="0">
+    <tr class="smalltitlesact">
+      <td width="60">Timestamp</td>
+      <td width="105">IP</td>
+      <td width="170">Hostname</td>
+      <td width="426">Message</td>
+    </tr>
+  </table>
+  <div id="actTBody" class="scrollBodyAct">
+    <table cellspacing="1" cellpadding="2" width="782" border="0">
+      <tr id="r1">
+        <td width="60" height="1"></td>
+        <td width="105" height="1"></td>
+        <td width="170" height="1"></td>
+        <td width="426" height="1"></td>
+      </tr>
+      <tr id="activities" data-source="lightstreamer" class="lscoldact">
+        <td width="60">
+          <div data-source="lightstreamer" data-field="TIME" class="lscoldact">
+          </div>
+        </td>
+        <td width="105">
+          <div data-source="lightstreamer" data-field="CLIENT.IP" class="lscoldact">
+          </div>
+        </td>
+        <td width="170">
+          <div data-source="lightstreamer" data-field="CLIENT.NAME" class="lscoldact">
+          </div>
+        </td>
+        <td width="426">
+          <div data-source="lightstreamer" data-field="MESSAGE" class="lscoldact">
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br />
+  <table cellspacing="1" cellpadding="2" width="782" border="0">
+    <tr class="largetitleswar">
+      <td>Warnings</td>
+    </tr>
+  </table>
+  <table cellspacing="1" cellpadding="2" width="782" border="0">
+    <tr class="smalltitleswar">
+      <td width="60">Timestamp</td>
+      <td width="506">Message</td>
+      <td width="200">Thread</td>
+    </tr>
+  </table>
+  <div id="warTBody" class="scrollBodyWar">
+    <table cellspacing="1" cellpadding="2" width="782" border="0">
+      <tr id="r2">
+        <td width="60" height="1"></td>
+        <td width="506" height="1"></td>
+        <td width="200" height="1"></td>
+      </tr>
+      <tr class="lscoldwar" data-source="lightstreamer" id="warnings">
+        <td width="60">
+          <div data-source="lightstreamer" data-field="TIME">
+          </div>
+        </td>
+        <td width="506">
+          <div data-source="lightstreamer" data-field="MESSAGE">
+          </div>
+        </td>
+        <td width="200">
+          <div data-source="lightstreamer" data-field="THREAD">
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br />
+  <table cellspacing="1" cellpadding="2" width="782" border="0">
+    <tr class="largetitleserr">
+      <td>Errors</td>
+    </tr>
+  </table>
+  <table cellspacing="1" cellpadding="2" width="782" border="0">
+    <tr class="smalltitleserr">
+      <td width="60">Timestamp</td>
+      <td width="506">Message</td>
+      <td width="200">Thread</td>
+    </tr>
+  </table>
+  <div id="errTBody" class="scrollBodyErr">
+    <table cellspacing="1" cellpadding="2" width="782" border="0">
+      <tr id="r3">
+        <td width="60" height="1"></td>
+        <td width="506" height="1"></td>
+        <td width="200" height="1"></td>
+      </tr>
+      <tr class="lscolderr" data-source="lightstreamer" id="errors">
+        <td width="60">
+          <div data-source="lightstreamer" data-field="TIME">
+          </div>
+        </td>
+        <td width="506">
+          <div data-source="lightstreamer" data-field="MESSAGE">
+          </div>
+        </td>
+        <td width="200">
+          <div data-source="lightstreamer" data-field="THREAD">
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br />
+
+  <!-- server details section; see details.js -->
+  <table cellspacing="1" cellpadding="2" width="782" border="0">
+    <tr>
+      <td width="202" nowrap class="infoName">Lightstreamer Server Edition:</td>
+      <td width="222">
+        <div data-source="lightstreamer" data-grid="license" data-item="monitor_identification" data-field="EDITION">
+          -</div>
+      </td>
+      <td width="118" class="infoName">Version:</td>
+      <td width="219">
+        <div data-source="lightstreamer" data-grid="license" data-item="monitor_identification" data-field="VERSION">
+          -</div>
+      </td>
+    </tr>
+    <tr>
+      <td nowrap class="infoName">Licensed Client ID:</td>
+      <td>
+        <div data-source="lightstreamer" data-grid="license" data-item="monitor_identification" data-field="CLIENT_ID">
+          -</div>
+      </td>
+      <td nowrap class="infoName">License Type:</td>
+      <td>
+        <div data-source="lightstreamer" data-grid="license" data-item="monitor_identification" data-field="LICENSE_TYPE">
+          -</div>
+      </td>
+    </tr>
+    <tr>
+      <td nowrap class="infoName">Local Server Address:</td>
+      <td>
+        <div data-source="lightstreamer" data-grid="license" data-item="monitor_identification" data-field="LOCAL_HOST">
+          -</div>
+      </td>
+      <td nowrap class="infoName">Local Server IP:</td>
+      <td>
+        <div data-source="lightstreamer" data-grid="license" data-item="monitor_identification" data-field="LOCAL_IP">
+          -</div>
+      </td>
+    </tr>
+    <tr>
+      <td nowrap class="infoName">Local Server Port:</td>
+      <td>
+        <div data-source="lightstreamer" data-grid="socket" data-item="monitor_local_socket" data-field="LOCAL_PORT">
+          -</div>
+      </td>
+      <td nowrap class="infoName">Socket Name:</td>
+      <td>
+        <div data-source="lightstreamer" data-grid="socket" data-item="monitor_local_socket" data-field="SERVER_NAME">
+          -</div>
+      </td>
+    </tr>
+  </table>
+</div>
+    
+<!-- load Lightstreamer libraries -->
+<script src="js/require.js"></script>
+<script src="js/lightstreamer.js"></script>
+
+
+<!-- table handling for the server statistics section -->
+<script src="js/statistics.js" type="text/javascript"></script>
+
+<!-- table handling for the server logging section -->
+<script src="js/logging.js" type="text/javascript"></script>
+
+<!-- table handling for the server address and details sections -->
+<script src="js/details.js" type="text/javascript"></script>
+
+</body>
+
+</html>
