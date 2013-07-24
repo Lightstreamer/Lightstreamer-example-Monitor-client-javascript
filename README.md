@@ -20,7 +20,7 @@ This project includes a web client front-end example for the [Lightstreamer Moni
 This application shows a real-time monitor console. Several metrics are reported as they change on the server.<br>
 
 The demo includes the following client-side technologies:
-* Three [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html)s containing the items for the statistics, subscribed to in <b>MERGE</b> mode feeding three [StaticGrid]((http://www.lightstreamer.com/docs/client_javascript_uni_api/StaticGrid.html))s. Fields from a single item are associated to cells scattered in the page.
+* Three [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html)s containing the items for the statistics, subscribed to in <b>MERGE</b> mode feeding three [StaticGrid]((http://www.lightstreamer.com/docs/client_javascript_uni_api/StaticGrid.html)s. Fields from a single item are associated to cells scattered in the page.
 * Three [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html)s containing the items for the server logging, subscribed to in <b>DISTINCT</b> mode feeding three [DynaGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/DynaGrid.html)s.
 
 # Deploy #
@@ -30,7 +30,7 @@ Before you can run the demo some dependencies need to be solved:
 -  Get the lightstreamer.js file from the [latest Lightstreamer distribution](http://www.lightstreamer.com/download) 
    and put it in the "src/js" folder of the demo (if that is the case, please create it). Alternatively you can build a lightstreamer.js file from the 
    [online generator](http://www.lightstreamer.com/distros/Lightstreamer_Allegro-Presto-Vivace_5_1_1_Colosseo_20130305/Lightstreamer/DOCS-SDKs/sdk_client_javascript/tools/generator.html).
-   In that case be sure to include the LightstreamerClient, Subscription, DynaGrid, and StatusWidget modules and to use the "Use AMD" version.
+   In that case be sure to include the LightstreamerClient, Subscription, DynaGrid, StaticGrid and StatusWidget modules and to use the "Use AMD" version.
 -  Get the require.js file form [requirejs.org](http://requirejs.org/docs/download.html) and put it in the "src/js" folder of the demo.
 -  Get the zip file from [script.aculo.us](http://script.aculo.us/downloads) and put the prototype.js, scriptaculous.js, and slider.js files in the "src/js/scriptaculous" folder of the demo.
 
