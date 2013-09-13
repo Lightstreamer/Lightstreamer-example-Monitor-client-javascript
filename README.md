@@ -46,7 +46,7 @@ The demo are now ready to be launched.
 
 # See Also #
 
-## Lightstreamer Adapters needed by these demo clients ##
+## Lightstreamer Adapters needed by this demo client ##
 
 * To be add: [Lightstreamer Monitor Demo Adapter]()
 
