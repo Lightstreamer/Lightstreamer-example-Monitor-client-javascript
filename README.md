@@ -7,7 +7,7 @@ This project includes a web client front-end example for the [Lightstreamer Moni
 <table>
   <tr>
     <td style="text-align: left">
-      &nbsp;<a href="http://demos.lightstreamer.com/MonitorDemo" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_monitor.png"></a>&nbsp;
+      &nbsp;<a href="http://demos.lightstreamer.com/MonitorDemo" target="_blank"><img src="screen_monitor.png"></a>&nbsp;
       
     </td>
     <td>
