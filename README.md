@@ -1,8 +1,6 @@
-# Lightstreamer Monitor Demo Client for JavaScript #
+# Lightstreamer - Monitor Console Demo - HTML Client #
 
 This project includes a web client front-end example for the [Lightstreamer Monitor Demo Adapter](https://github.com/Weswit/Lightstreamer-example-Monitor-adapter-java).
-
-## Monitor Console Demo ##
 
 <table>
   <tr>
@@ -52,9 +50,9 @@ The demo are now ready to be launched.
 
 ## Similar demo clients that may interest you ##
 
-* [Lightstreamer StockList Demo Client for JavaScript](https://github.com/Weswit/Lightstreamer-example-Stocklist-client-javascript)
-* [Lightstreamer Chat Demo Client for JavaScript](https://github.com/Weswit/Lightstreamer-example-Chat-client-javascript)
-* [Lightstreamer Portfolio Demo Client for JavaScript](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript)
+* [Lightstreamer - Stock-List Demos - HTML Clients](https://github.com/Weswit/Lightstreamer-example-Stocklist-client-javascript)
+* [Lightstreamer - Chat Demo  HTML Client](https://github.com/Weswit/Lightstreamer-example-Chat-client-javascript)
+* [Lightstreamer - Portfolio Demo - HTML Client](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript)
 
 # Lightstreamer Compatibility Notes #
 
