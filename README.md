@@ -1,6 +1,6 @@
 # Lightstreamer - Monitor Console Demo - HTML Client #
 
-This project includes a web client front-end example for the [Lightstreamer Monitor Demo Adapter](https://github.com/Weswit/Lightstreamer-example-Monitor-adapter-java).
+This project includes a simple HTML client front-end example for a monitor console application.
 
 <table>
   <tr>
@@ -34,19 +34,70 @@ Before you can run the demo some dependencies need to be solved:
 
 You can deploy this demo in order to use the Lightstreamer server as Web server or in any external Web Server you are running. 
 If you choose the former case please note that in the <LS_HOME>/pages/demos/ folder there is a copy of the /src directory of this project, if this is non your case please create the folders <LS_HOME>/pages/demos/MessengerDemo then copy here the contents of the /src folder of this project.<br>
-The client demo configuration assumes that Lightstreamer Server, Lightstreamer Adapters and this client are launched on the same machine. If you need to targeting a different Lightstreamer server please search this line:
+The client demo configuration assumes that Lightstreamer Server and this client are launched on the same machine. If you need to targeting a different Lightstreamer server please search this line:
 ```js
-var lsClient = new LightstreamerClient(protocolToUse+"//localhost:8080","DEMO");
+var lsClient = new LightstreamerClient(protocolToUse+"//localhost:8080","MONITORDEMO");
 ```
 in js/lsClient.js file and change it accordingly.<br>
-Anyway the [MONITOR]() and [MonitorDemo]() Adapters have to be deployed in your local Lightstreamer server instance. The factory configuration of Lightstreamer server already provides this adapter deployed.<br>
+
+Note also that this demo is a very special case since does not need any specific adapters, but through the special "MONITOR" name, the internal monitoring Data Adapter provided by Lightstreamer Server is loaded.
+The Metadata Adapter functionalities are absolved by the `LiteralBasedProvider` in [Lightstreamer - Reusable Metadata Adapters - Java Adapter](https://github.com/Weswit/Lightstreamer-example-ReusableMetadata-adapter-java), a simple full implementation of a Metadata Adapter, made available in Lightstreamer distribution. 
+In order to run the demo you just need to create a new folder to configure the adapters, let's call it "MonitorDemo", inside the "adapters" folder of your \LS_HOME dir and add a "adapters.xml" configuration file like this: 
+
+```xml
+<?xml version="1.0"?>
+
+<!-- Mandatory. Define an Adapter Set and sets its unique ID. -->
+<adapters_conf id="MONITORDEMO">
+
+    <!-- Mandatory. Define the Metadata Adapter. -->
+    <metadata_provider>
+
+        <!-- Mandatory. Java class name of the adapter. -->
+        <adapter_class>com.lightstreamer.adapters.metadata.LiteralBasedProvider</adapter_class>
+
+        <!-- Optional.
+             See LiteralBasedProvider javadoc. -->
+        <!--
+        <param name="max_bandwidth">40</param>
+        <param name="max_frequency">3</param>
+        <param name="buffer_size">30</param>
+        <param name="distinct_snapshot_length">10</param>
+        <param name="prefilter_frequency">5</param>
+        <param name="allowed_users">user123,user456</param>
+        -->
+
+        <!-- Optional.
+             See LiteralBasedProvider javadoc. -->
+        <param name="item_family_1">monitor_log_.*</param>
+        <param name="modes_for_item_family_1">DISTINCT</param>
+        
+        <param name="item_family_2">monitor_.*</param>
+        <param name="modes_for_item_family_2">MERGE</param>
+        
+    </metadata_provider>
+
+    <!-- Mandatory. Define the Data Adapter. -->
+    <data_provider name="MONITOR">
+
+        <!-- Mandatory. Java class name of the adapter.
+             Through the special "MONITOR" name, the internal monitoring Data
+             Adapter provided by Lightstreamer Server is loaded. -->
+        <adapter_class>MONITOR</adapter_class>
+
+    </data_provider>
+
+</adapters_conf>
+```
+
+The factory configuration of Lightstreamer server already provides this adapter deployed.<br>
 The demo are now ready to be launched.
 
 # See Also #
 
 ## Lightstreamer Adapters needed by this demo client ##
 
-* To be add: [Lightstreamer Monitor Demo Adapter]()
+* MONITOR. Through the special "MONITOR" name, the internal monitoring Data Adapter provided by Lightstreamer Server is loaded.
 
 ## Similar demo clients that may interest you ##
 
