@@ -19,7 +19,7 @@ This project includes a simple HTML client front-end example for a monitor conso
 
 This application shows a real-time monitor console. Several metrics are reported as they change on the server.<br>
 
-The demo includes the following client-side technologies:
+The demo includes the following client-side functionalities:
 * Three [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html)s containing the items for the statistics, subscribed to in <b>MERGE</b> mode feeding three [StaticGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/StaticGrid.html)s. Fields from a single item are associated to cells scattered in the page.
 * Three [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html)s containing the items for the server logging, subscribed to in <b>DISTINCT</b> mode feeding three [DynaGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/DynaGrid.html)s.
 
