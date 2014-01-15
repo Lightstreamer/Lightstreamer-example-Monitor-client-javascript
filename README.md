@@ -4,18 +4,8 @@
 
 This project includes a simple HTML client front-end example for a monitor console application.
 
-<table>
-  <tr>
-    <td style="text-align: left">
-      &nbsp;<a href="http://demos.lightstreamer.com/MonitorDemo" target="_blank"><img src="screen_monitor.png"></a>&nbsp;
-      
-    </td>
-    <td>
-      &nbsp;An online demonstration is hosted on our servers at:<br>
-      &nbsp;<a href="http://demos.lightstreamer.com/MonitorDemo" target="_blank">http://demos.lightstreamer.com/MonitorDemo</a>
-    </td>
-  </tr>
-</table>
+[![screenshot](screen_monitor_large.png)](http://demos.lightstreamer.com/MonitorDemo/)<br>
+An online demonstration is hosted on our servers at: [http://demos.lightstreamer.com/MonitorDemo/](http://demos.lightstreamer.com/MonitorDemo/)<br>
 
 This application shows a real-time monitor console. Several metrics are reported as they change on the server.<br>
 
@@ -99,14 +89,14 @@ The demo are now ready to be launched.
 
 # See Also #
 
-## Lightstreamer Adapters needed by this demo client ##
+## Lightstreamer Adapters Needed by This Demo Client ##
 <!-- START RELATED_ENTRIES -->
 
 * MONITOR. Through the special "MONITOR" name, the internal monitoring Data Adapter provided by Lightstreamer Server is loaded.
 
 <!-- END RELATED_ENTRIES -->
 
-## Similar demo clients that may interest you ##
+## Related Projects ##
 
 * [Lightstreamer - Stock-List Demos - HTML Clients](https://github.com/Weswit/Lightstreamer-example-Stocklist-client-javascript)
 * [Lightstreamer - Chat Demo - HTML Client](https://github.com/Weswit/Lightstreamer-example-Chat-client-javascript)

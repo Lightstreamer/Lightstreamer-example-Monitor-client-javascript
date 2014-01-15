@@ -19,7 +19,7 @@ define(["LightstreamerClient","StatusWidget"],function(LightstreamerClient,Statu
     var protocolToUse = document.location.protocol != "file:" ? document.location.protocol : "http:";
     var lsClient = new LightstreamerClient(protocolToUse+"//localhost:8080","MONITORDEMO");
     
-    lsClient.connectionSharing.enableSharing("DemoCommonConnection", "ATTACH", "CREATE");
+    lsClient.connectionSharing.enableSharing("MonitorDemoCommonConnection", "ATTACH", "CREATE");
     lsClient.addListener(new StatusWidget("left", "0px", true));
     lsClient.connect();
     
