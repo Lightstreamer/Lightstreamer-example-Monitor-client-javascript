@@ -26,10 +26,11 @@ The demo includes the following client-side functionalities:
 #### The Adapter Set Configuration
 
 This demo is a very special case since does not need any specific adapters, but through the special "MONITOR" name, the internal monitoring Data Adapter provided by Lightstreamer Server is loaded.
+The factory configuration of Lightstreamer server already provides this adapter deployed.
 
 The Metadata Adapter functionalities are absolved by the `LiteralBasedProvider` in [Lightstreamer - Reusable Metadata Adapters - Java Adapter](https://github.com/Weswit/Lightstreamer-example-ReusableMetadata-adapter-java), a simple full implementation of a Metadata Adapter, made available in Lightstreamer distribution. 
 
-In order to run the demo you just need to have a folder inside the "adapters" folder of your \LS_HOME dir, let's call it "MonitorDemo", and inside it an "adapters.xml" configuration file like this: 
+In order to run the demo you just need to have a folder, let's call it `MonitorDemo`, inside the `<LS_HOME>/adapters` folder of your Lightstreamer Server installation and inside it an `adapters.xml` configuration file like this: 
 
 ```xml
 <?xml version="1.0"?>
@@ -77,8 +78,6 @@ In order to run the demo you just need to have a folder inside the "adapters" fo
 </adapters_conf>
 ```
 
-The factory configuration of Lightstreamer server already provides this adapter deployed.<br>
-
 <!-- END DESCRIPTION lightstreamer-example-monitor-client-javascript -->
 ## Install
 If you want to install a version of this demo pointing to your local Lightstreamer Server, follow these steps.
@@ -89,13 +88,12 @@ If you want to install a version of this demo pointing to your local Lightstream
 * Get the `lightstreamer.js` file from the [latest Lightstreamer distribution](http://www.lightstreamer.com/download) and put it in the `src/js` folder. 
 Alternatively you can build a `lightstreamer.js` file from the [online generator](http://www.lightstreamer.com/distros/Lightstreamer_Allegro-Presto-Vivace_5_1_1_Colosseo_20130305/Lightstreamer/DOCS-SDKs/sdk_client_javascript/tools/generator.html). In that case be sure to include the LightstreamerClient, Subscription, DynaGrid, and StatusWidget modules and to use the "Use AMD" version.
 * Get the `require.js` file form [requirejs.org](http://requirejs.org/docs/download.html) and put it in the `src/js` folder.
-* Get the zip file from [script.aculo.us](http://script.aculo.us/downloads) and put the prototype.js, scriptaculous.js, and slider.js files in the "src/js/scriptaculous" folder of the demo.
+* Get the zip file from [script.aculo.us](http://script.aculo.us/downloads) and put the `prototype.js`, `scriptaculous.js`, and `slider.js` files in the `src/js/scriptaculous` folder of the demo.
 * Deploy this demo on the Lightstreamer Server (used as Web server) or in any external Web Server. If you choose the former, please note that in the `<LS_HOME>/pages/demos/` folder there may be already a `MonitorDemo` folder. If this is not your case please create the folders `<LS_HOME>/pages/MonitorDemo` and copy here the contents of the `/src` folder of this project.
 The client demo configuration assumes that Lightstreamer Server, Lightstreamer Adapters and this client are launched on the same machine. If you need to targeting a different Lightstreamer server please search in `js/lsClient.js` this line:<BR/> 
 `var lsClient = new LightstreamerClient(protocolToUse+"//localhost:"+portToUse,"MONITORDEMO");`<BR/> 
 and change it accordingly.
 * Open your browser and point it to: [http://localhost:8080/MonitorDemo/](http://localhost:8080/MonitorDemo/)
-
 
 ## See Also
 
