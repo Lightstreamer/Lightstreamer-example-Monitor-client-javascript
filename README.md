@@ -1,9 +1,9 @@
 # Lightstreamer - Monitor Console Demo - HTML Client
 
 <!-- START DESCRIPTION lightstreamer-example-monitor-client-javascript -->
-The *Monitor Console Demo* is a very simple monitor console application based on Lightstreamer for its real-time communication needs.
+The *Monitor Console Demo* is a monitor console application based on Lightstreamer for its real-time communication needs.
 
-This project includes a simple HTML client front-end for the *Basic Messenger Demo*.
+This project includes a HTML client front-end for the *Basic Messenger Demo*.
 
 As example of [Lightstreamer Adapters Needed by This Client](https://github.com/Weswit/Lightstreamer-example-Monitor-client-javascript#lightstreamer-adapters-needed-by-this-client), you may refer to the internal monitoring Data Adapter provided by Lightstreamer Server.
 
