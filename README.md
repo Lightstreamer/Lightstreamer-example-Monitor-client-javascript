@@ -3,7 +3,7 @@
 <!-- START DESCRIPTION lightstreamer-example-monitor-client-javascript -->
 The *Monitor Console Demo* is a monitor console application based on Lightstreamer for its real-time communication needs.
 
-This project includes a simple HTML client front-end example for a monitor console application..
+This project includes a simple HTML client front-end example for a monitor console application.
 
 As an example of [Lightstreamer Adapters Needed by This Client](https://github.com/Weswit/Lightstreamer-example-Monitor-client-javascript#lightstreamer-adapters-needed-by-this-client), you may refer to the internal monitoring Data Adapter provided by Lightstreamer Server.
 
@@ -15,8 +15,8 @@ As an example of [Lightstreamer Adapters Needed by This Client](https://github.c
 
 ## Details
 
-This application shows a real-time monitor console. Several metrics are reported as they change on the server.
-Refer to the 4.2.1 section of the [General Concept.pdf](http://www.lightstreamer.com/docs/base/General%20Concepts.pdf#page=37) document for a dictionary of the fields made available by the MONITOR Adapter.
+This application shows a real-time monitor console. Several metrics are reported as they change on the server.<br>
+Refer to the 4.2.1 section of the [General Concept.pdf](http://www.lightstreamer.com/docs/base/General%20Concepts.pdf#page=37) document for a dictionary of the fields made available by the "MONITOR" Adapter.
 
 The demo includes the following client-side functionalities:
 * Three [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html)s containing the items for the statistics, subscribed to in <b>MERGE</b> mode feeding three [StaticGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/StaticGrid.html)s. Fields from a single item are associated to cells scattered in the page.
