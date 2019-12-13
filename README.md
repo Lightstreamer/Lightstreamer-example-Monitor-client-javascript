@@ -19,8 +19,8 @@ This application shows a real-time monitor console. Several metrics are reported
 Refer to the 4.2.1 section of the [General Concept.pdf](http://www.lightstreamer.com/docs/base/General%20Concepts.pdf#page=37) document for a dictionary of the fields made available by the "MONITOR" Adapter.
 
 The demo includes the following client-side functionalities:
-* Three [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html)s containing the items for the statistics, subscribed to in <b>MERGE</b> mode feeding three [StaticGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/StaticGrid.html)s. Fields from a single item are associated to cells scattered in the page.
-* Three [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html)s containing the items for the server logging, subscribed to in <b>DISTINCT</b> mode feeding three [DynaGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/DynaGrid.html)s. 
+* Three [Subscription](https://lightstreamer.com/api/ls-web-client/latest/Subscription.html)s containing the items for the statistics, subscribed to in <b>MERGE</b> mode feeding three [StaticGrid](https://lightstreamer.com/api/ls-web-client/latest/StaticGrid.html)s. Fields from a single item are associated to cells scattered in the page.
+* Three [Subscription](https://lightstreamer.com/api/ls-web-client/latest/Subscription.html)s containing the items for the server logging, subscribed to in <b>DISTINCT</b> mode feeding three [DynaGrid](https://lightstreamer.com/api/ls-web-client/latest/DynaGrid.html)s. 
 
 ### Dig the Code
 
@@ -86,8 +86,10 @@ If you want to install a version of this demo pointing to your local Lightstream
 * Get the `deploy.zip` file of the [latest release](https://github.com/Lightstreamer/Lightstreamer-example-Monitor-client-javascript/releases), unzip it, and copy the just unzipped `MonitorDemo` folder into the `adapters` folder of your Lightstreamer Server installation.
 * Download this project.
 * Launch Lightstreamer Server.
-* Get the `lightstreamer.js` file from the [latest Lightstreamer distribution](http://www.lightstreamer.com/download) and put it in the `src/js` folder. 
-Alternatively, you can build a `lightstreamer.js` file from the [online generator](http://www.lightstreamer.com/docs/client_javascript_tools/generator.html). In that case, be sure to include the LightstreamerClient, Subscription, DynaGrid, ConnectionSharing, and StatusWidget modules and to use the "Use AMD" version.
+* Get the `lightstreamer.js` file from [npm](https://www.npmjs.com/package/lightstreamer-client-web) or [unpkg](https://unpkg.com/lightstreamer-client-web/lightstreamer.js) and put it in the `src/js` folder. 
+  Alternatively, you can generate a customized lightstreamer.js library containing only the classes you actually use;
+  see the build instructions on the [GitHub page](https://github.com/Lightstreamer/Lightstreamer-lib-client-javascript#building).
+  In that case, be sure to include the LightstreamerClient, Subscription, DynaGrid, ConnectionSharing, and StatusWidget modules and to use the "Use AMD" version.
 * Get the `require.js` file form [requirejs.org](http://requirejs.org/docs/download.html) and put it in the `src/js` folder.
 * Get the zip file from [script.aculo.us](http://script.aculo.us/downloads) and put the `prototype.js`, `scriptaculous.js`, and `slider.js` files in the `src/js/scriptaculous` folder of the demo.
 * Deploy this demo on the Lightstreamer Server (used as Web server) or in any external Web Server. If you choose the former, please note that in the `<LS_HOME>/pages/demos/` folder, there may be already a `MonitorDemo` folder. If this is not your case, please create the folders `<LS_HOME>/pages/MonitorDemo` and copy here the contents of the `/src` folder of this project.
