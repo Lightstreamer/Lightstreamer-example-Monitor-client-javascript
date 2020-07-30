@@ -16,7 +16,7 @@ As an example of [Lightstreamer Adapters Needed by This Client](https://github.c
 ## Details
 
 This application shows a real-time monitor console. Several metrics are reported as they change on the server.<br>
-Refer to the 4.2.1 section of the [General Concept.pdf](http://www.lightstreamer.com/docs/base/General%20Concepts.pdf#page=37) document for a dictionary of the fields made available by the "MONITOR" Adapter.
+Refer to the 4.2.1 section of the [General Concept.pdf](https://lightstreamer.com/docs/ls-server/latest/General%20Concepts.pdf) document for a dictionary of the fields made available by the "MONITOR" Adapter.
 
 The demo includes the following client-side functionalities:
 * Three [Subscription](https://lightstreamer.com/api/ls-web-client/latest/Subscription.html)s containing the items for the statistics, subscribed to in <b>MERGE</b> mode feeding three [StaticGrid](https://lightstreamer.com/api/ls-web-client/latest/StaticGrid.html)s. Fields from a single item are associated to cells scattered in the page.
